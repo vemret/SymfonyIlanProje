@@ -1,0 +1,71 @@
+{% extends 'homebase.html.twig' %}
+
+{% block title %}{{ app.user.name }} Profile{% endblock %}
+
+{% block body %}
+    <div class="bradcam_area bradcam_bg_1">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="bradcam_text">
+                        <h3>User Comments List</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <section class="blog_area section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3">
+                    <div class="blog_left_sidebar">
+                        <div class="blog_details">
+                        {{ include('user/usermenu.html.twig') }}
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-9 mb-5 mb-lg-0">
+                    <div class="blog_right_sidebar">
+                            <article class="blog_item">
+                            <div class="blog_details">
+                                <h4>Comments</h4>
+                                <div class="comments-area">
+
+                                    <div class="comment-list">
+                                        <div class="single-comment justify-content-between d-flex">
+                                            <div class="user justify-content-between d-flex">
+                                                <div class="thumb">
+                                                    <img src="img/comment/comment_1.png" alt="">
+                                                </div>
+                                                <div class="desc">
+                                                    <p class="comment">
+                                                        My Advert
+                                                    </p>
+                                                  <!--  <div class="d-flex justify-content-between">
+                                                        <div class="d-flex align-items-center">
+                                                            <h5>
+                                                                <a href="#">Emilly Blunt</a>
+                                                            </h5>
+                                                            <p class="date">December 4, 2017 at 3:12 pm </p>
+                                                        </div>
+                                                        <div class="reply-btn">
+                                                            <a href="#" class="btn-reply text-uppercase">reply</a>
+                                                        </div> -->
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                        </article>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </section>
+
+{% endblock %}

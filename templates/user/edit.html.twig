@@ -1,0 +1,49 @@
+{% extends 'homebase.html.twig' %}
+
+{% block title %}{{ app.user.name }} Profile{% endblock %}
+
+{% block body %}
+    <div class="bradcam_area bradcam_bg_1">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="bradcam_text">
+                        <h3>Blog</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <section class="blog_area section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3">
+                    <div class="blog_left_sidebar">
+                        <div class="blog_details">
+                            {{ include('user/usermenu.html.twig') }}
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-9 mb-5 mb-lg-0">
+                    <div class="blog_right_sidebar">
+                        <article class="blog_item">
+                            <div class="blog_details">
+    <h3>Edit User</h3>
+<hr><br>
+    {{ include('user/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('user_index') }}">back to list</a>
+
+    {{ include('user/_delete_form.html.twig') }}
+    </div>
+    </article>
+    </div>
+    </div>
+
+
+    </div>
+    </div>
+    </section>
+
+{% endblock %}

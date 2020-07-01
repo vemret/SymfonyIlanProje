@@ -1,0 +1,70 @@
+<!-- slider_area_start -->
+<div class="slider_area">
+    <div class="slider_active owl-carousel">
+        {%   for rs in slider %}
+        <div class="single_slider  d-flex align-items-center overlay2 " >
+            <a href="{{ path('product_show', {'id': rs.id}) }}">
+            <img src="{{ asset('uploads/images/' ~ rs.image) }}" style="height: 800px; width: 800px" alt="">
+        </a>
+                <div class="container">
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="slider_text ">
+                            <h3>{{rs.title}}</h3>
+
+                                <p>{{ rs.description }} </p>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+        <!--<div class="single_slider  d-flex align-items-center slider_bg_2 overlay2">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="slider_text ">
+                            <h3>Big Opportunity <br>
+                                for your Business</h3>
+                            <div class="video_service_btn">
+                                <a href="#" class="boxed-btn3">Our Services</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="single_slider  d-flex align-items-center slider_bg_1 overlay2">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="slider_text ">
+                            <h3>Big Opportunity <br>
+                                for your Business</h3>
+                            <div class="video_service_btn">
+                                <a href="#" class="boxed-btn3">Our Services</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="single_slider  d-flex align-items-center slider_bg_2 overlay2">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="slider_text ">
+                            <h3>Big Opportunity <br>
+                                for your Business</h3>
+                            <div class="video_service_btn">
+                                <a href="#" class="boxed-btn3">Our Services</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+    </div>
+</div>
+<!-- slider_area_end -->

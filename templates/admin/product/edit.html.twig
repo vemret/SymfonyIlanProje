@@ -1,0 +1,23 @@
+{% extends 'adminbase.html.twig' %}
+
+{% block title %}Edit Product{% endblock %}
+
+{% block body %}
+    <section id="main-content">
+        <section class="wrapper site-min-height">
+            <h3><i class="fa fa-angle-right"></i> Blank Page</h3>
+            <div class="row mt">
+                <div class="col-lg-12">
+                    <h1>Edit Product</h1>
+
+                    {{ include('admin/product/_form.html.twig', {'button_label': 'Update'}) }}
+
+                    <a href="{{ path('admin_product_index') }}">back to list</a>
+
+                    {{ include('admin/product/_delete_form.html.twig') }}
+                </div>
+            </div>
+        </section>
+        <!-- /wrapper -->
+    </section>
+{% endblock %}

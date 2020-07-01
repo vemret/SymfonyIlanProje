@@ -1,0 +1,25 @@
+{% extends 'adminbase.html.twig' %}
+
+{% block title %}Hello adminController!{% endblock %}
+
+{% block body %}
+    <!--main content start-->
+    <section id="main-content">
+        <section class="wrapper site-min-height">
+            <h3><i class="fa fa-angle-right"></i> Edit Comment</h3>
+            <div class="row mt">
+                <div class="col-lg-12">
+                    <h1>Edit Comment</h1>
+
+                    {{ include('admin/comment/_form.html.twig', {'button_label': 'Update'}) }}
+
+                    <a href="{{ path('admin_comment_index') }}">back to list</a>
+
+                    {{ include('admin/comment/_delete_form.html.twig') }}
+                </div>
+            </div>
+        </section>
+        <!-- /wrapper -->
+    </section>
+    <!-- /MAIN CONTENT -->
+{% endblock %}

@@ -1,0 +1,134 @@
+{% extends 'homebase.html.twig' %}
+
+{% block title %}{{ app.user.name }} Profile{% endblock %}
+
+{% block body %}
+<h1>Product index</h1>
+<div class="bradcam_area bradcam_bg_1">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="bradcam_text">
+                    <h3>User Advert List</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<section class="blog_area section-padding">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3">
+                <div class="blog_left_sidebar">
+                    <div class="blog_details">
+                        {{ include('user/usermenu.html.twig') }}
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-9 mb-5 mb-lg-0">
+                <div class="blog_right_sidebar">
+                    <article class="blog_item">
+                        <div class="blog_details">
+                            <h4>Advert</h4>
+                            <div class="comments-area">
+
+                                <div class="comment-list">
+                                    <div class="single-comment justify-content-between d-flex">
+                                        <div class="user justify-content-between d-flex">
+                                            <div class="thumb">
+                                                <img src="img/comment/comment_1.png" alt="">
+                                            </div>
+                                            <div class="desc">
+                                             <h1>Advert</h1>
+
+                                                <table class="table">
+                                                    <tbody>
+                                                    <tr>
+                                                        <th>Id</th>
+                                                        <td>{{ product.id }}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>Title</th>
+                                                        <td>{{ product.title }}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>Keywords</th>
+                                                        <td>{{ product.keywords }}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>Summary</th>
+                                                        <td>{{ product.summary }}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>Image</th>
+                                                        <td>{{ product.image }}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>Type</th>
+                                                        <td>{{ product.type }}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>Adres</th>
+                                                        <td>{{ product.adres }}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>Sponsor</th>
+                                                        <td>{{ product.sponsor }}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>City</th>
+                                                        <td>{{ product.city }}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>Country</th>
+                                                        <td>{{ product.country }}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>Status</th>
+                                                        <td>{{ product.status }}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>Created_at</th>
+                                                        <td>{{ product.createdAt ? product.createdAt|date('Y-m-d H:i:s') : '' }}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>Updated_at</th>
+                                                        <td>{{ product.updatedAt ? product.updatedAt|date('Y-m-d H:i:s') : '' }}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>Description</th>
+                                                        <td>{{ product.description }}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>Detail</th>
+                                                        <td>{{ product.detail }}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>Userid</th>
+                                                        <td>{{ product.userid }}</td>
+                                                    </tr>
+                                                    </tbody>
+                                                </table>
+
+                                                <a href="{{ path('user_product_index') }}">back to list</a>
+
+                                                <a href="{{ path('user_product_edit', {'id': product.id}) }}">edit</a>
+
+                                                {{ include('product/_delete_form.html.twig') }}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </article>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</section>
+{% endblock %}

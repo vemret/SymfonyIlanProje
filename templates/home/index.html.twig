@@ -1,0 +1,88 @@
+{% extends 'homebase.html.twig' %}
+
+{% block title %}{{setting[0].title}}{% endblock %}
+{% block keywords %}{{setting[0].keywords}}{% endblock %}
+{% block description %}{{setting[0].description}}{% endblock %}
+
+
+{% block slider %} {%  include('home/slider.html.twig') %} {% endblock %}
+{% block body %}
+
+
+
+
+    <!-- case_study_area  -->
+    <div class="case_study_area">
+        <div class="container">
+            <div class="border_bottom">
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="section_title text-center mb-40">
+                            <h3>Case Study</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="case_active owl-carousel">
+                            {% for rs in products %}
+                            <div class="single_case">
+                                <div class="case_thumb">
+                                    <a href="{{ asset('uploads/images/' ~ rs.image) }}" class="img-pop-up">
+                                        <div class="single-gallery-image" style="background: url({{ asset('uploads/images/' ~ rs.image) }});"></div>
+                                    </a>
+                                </div>
+                                <div class="case_heading">
+                                    <span>Finance Solution</span>
+                                    <h3><a href="{{ path('product_show', {'id': rs.id}) }}">{{ rs.title }}</a></h3>
+                                </div>
+                            </div>
+                            {% endfor %}
+
+                        </div>
+
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="more_close_btn text-center">
+                            <a href="#" class="boxed-btn3-line">More Cases</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /case_study_area  -->
+
+
+
+    <div class="testimonial_area overlay ">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="testmonial_active owl-carousel">
+                        {%   for rs in newslider %}
+                        <div class="single_carousel">
+                            <div class="single_testmonial text-center">
+                                <div class="quote">
+                                    <img src="{{ asset('uploads/images/' ~ rs.image) }}" style="height: 800px; width: 800px" alt="">
+                                </div>
+                                <p>{{ rs.description }} </p>
+                                <div class="testmonial_author">
+
+                                    <h3>{{rs.title}}</h3>
+
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+{% endblock %}

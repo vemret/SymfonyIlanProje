@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        <meta name="description" content="{% block description %}Bir dernek sitesi{% endblock %}">
+        <meta name="keywords" content="{% block keywords %}dernek{% endblock %}">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        {% block head %} {%  include('home/head.html.twig') %} {% endblock %}
+    </head>
+    <body>
+        {% block header %} {%  include('home/header.html.twig') %} {% endblock %}
+        {% block sidebar %}  {% endblock %}
+        {% block slider %}  {% endblock %}
+        {% block body %}{% endblock %}
+        {% block footer %} {%  include('home/footer.html.twig') %} {% endblock %}
+        {% block javascripts %} {%  include('home/javascript.html.twig') %} {% endblock %}
+    </body>
+</html>

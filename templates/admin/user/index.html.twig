@@ -1,0 +1,69 @@
+{% extends 'adminbase.html.twig' %}
+
+{% block title %}User List{% endblock %}
+
+{% block body %}
+<SCRIPT language="JavaScript" type="text/javascript">
+    function openWin(windowURL, windowName, windowFeatures) { window.open(windowURL, windowName, windowFeatures ); }
+</SCRIPT>
+<section id="main-content">
+    <section class="wrapper site-min-height">
+        <h3><i class="fa fa-angle-right"></i> User Page</h3>
+        <div class="row mt">
+    <h1>User List</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Email</th>
+                <th>Roles</th>
+
+                <th>Name</th>
+                <th>Surname</th>
+                <th>Image</th>
+                <th>Status</th>
+
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for user in users %}
+            <tr>
+                <td>{{ user.id }}</td>
+                <td>{{ user.email }}</td>
+                <td>{{ user.roles ? user.roles|json_encode : '' }}</td>
+
+                <td>{{ user.name }}</td>
+                <td>{{ user.surname }}</td>
+                <td><img src=" {{ asset('uploads/images/' ~ user.image) }}" height="40"> </td>
+                <td>{{ user.status }}</td>
+                <td>
+                    <a href="{{ path('admin_user_show', {'id': user.id}) }}"class="btn btn-block btn-info">Show</a>
+                </td>
+                <td>
+                    <a href="{{ path('admin_user_edit', {'id': user.id}) }}"class="btn btn-block btn-info">Edit</a>
+                </td>
+                <td>
+                    {{ include('admin/user/_delete_form.html.twig') }}
+                </td>
+
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="11">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+
+            <div class="col-md-2">
+                <a href="{{ path('admin_user_new') }}"class="btn btn-block btn-info">Create New User</a>
+            </div>
+        </div>
+        </div>
+    </section>
+    <!-- /wrapper -->
+</section>
+{% endblock %}

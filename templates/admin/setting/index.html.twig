@@ -1,0 +1,64 @@
+{% extends 'adminbase.html.twig' %}
+
+{% block title %}Hello adminController!{% endblock %}
+
+{% block body %}
+<!--main content start-->
+<section id="main-content">
+    <section class="wrapper site-min-height">
+        <h2><i class="fa fa-angle-right"></i>Settings Page</h2>
+        <div class="row mt">
+            <div class="col-lg-12">
+    <h4>Setting index</h4>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Title</th>
+
+                <th>Company</th>
+                <th>Email</th>
+
+
+
+                <th>Status</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for setting in settings %}
+            <tr>
+                <td>{{ setting.id }}</td>
+                <td>{{ setting.title }}</td>
+
+                <td>{{ setting.company }}</td>
+                <td>{{ setting.email }}</td>
+
+
+
+                <td>{{ setting.status }}</td>
+                <td>
+                    <a href="{{ path('setting_show', {'id': setting.id}) }}"class="btn btn-block btn-info">Show</a>
+
+                    <a href="{{ path('setting_edit', {'id': setting.id}) }}"class="btn btn-block btn-info">Edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="21">no records found</td>
+                <div class="col-xs-3">
+                    <a href="{{ path('setting_new') }}"class="btn btn-block btn-info">Create Settings</a>
+                </div>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+            </div>
+        </div>
+    </section>
+    <!-- /wrapper -->
+</section>
+    <!-- /MAIN CONTENT -->
+{% endblock %}
